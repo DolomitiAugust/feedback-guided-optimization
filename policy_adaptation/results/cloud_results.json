@@ -1,0 +1,31 @@
+{
+  "training_executed": true,
+  "training_exit_code": 0,
+  "gpu": "NVIDIA A10",
+  "precision": "bf16",
+  "openrlhf_commit": "bfa85f6fa8cd6214707f93883fac5d08334f4f06",
+  "actor_adapter_sha256": "fe97f9d9cd1e86eab3bfe1b50e753cf9ca68ffbcdbad49addcac573e0775b498",
+  "adapter_all_finite": true,
+  "lora_B_tensor_count": 168,
+  "nonzero_lora_B_tensors": 168,
+  "lora_B_l2_norm": 0.17797966358304518,
+  "logged_rollout_steps": 32,
+  "validation_n": 128,
+  "baseline_accuracy": 0.9140625,
+  "trained_accuracy": 0.953125,
+  "accuracy_difference": 0.0390625,
+  "metric": "first_line_integer_accuracy_v2",
+  "interpretation": "Measured first-line integer accuracy; a positive change is not assumed.",
+  "metric_tags": [
+    "train/actor_lr",
+    "train/critic_loss",
+    "train/critic_lr",
+    "train/kl",
+    "train/policy_loss",
+    "train/response_length",
+    "train/return",
+    "train/reward",
+    "train/total_length",
+    "train/values"
+  ]
+}

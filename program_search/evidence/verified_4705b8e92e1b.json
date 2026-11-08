@@ -1,0 +1,20 @@
+{
+  "source_snapshot": "attempt02_snapshot03",
+  "candidate_id": "4705b8e92e1b",
+  "source_sha256": "c6d69edd01c4e8ab34330f1d9d55950116c806e8e71f71e6315c9a61e0a38172",
+  "evaluator_sha256": "a99db383a078f6e6b41423ac15705b65c2eaf6df41b9624cfb691f023ba58ccd",
+  "method": "Original exported constructor run locally; unchanged exported geometry method extracted via AST. Not a new online evaluation.",
+  "python": "3.14.2",
+  "numpy": "2.4.4",
+  "scipy": "1.17.1",
+  "elapsed_seconds": 4.759376200003317,
+  "circle_count": 26,
+  "online_score": 2.62001380699489,
+  "local_score": 2.6206092130170973,
+  "local_minus_online": 0.00059540602220709,
+  "geometry_error": null,
+  "valid": true,
+  "minimum_boundary_gap": 1.3832546219560982e-12,
+  "minimum_pair_gap": 1.0173806241908778e-12,
+  "packing_file": "evidence/best_local_packing.json"
+}

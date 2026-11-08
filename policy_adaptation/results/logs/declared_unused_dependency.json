@@ -1,0 +1,7 @@
+{
+  "omitted": [
+    "flash-attn==2.7.0.post2"
+  ],
+  "reason": "Restricted single-GPU eager, unpacked path; delayed import patch checked",
+  "package_metadata_modified": false
+}

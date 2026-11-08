@@ -1,0 +1,18 @@
+{
+  "scope": "Tiny random Qwen LoRA Actor/Critic eager CUDA forward/backward and FusedAdam update; not full PPO training",
+  "torch": "2.5.1+cu124",
+  "gpu": "NVIDIA A10",
+  "flash_installed": false,
+  "declared_dependency_exception": [
+    "openrlhf 0.6.0 requires flash-attn, which is not installed."
+  ],
+  "forward_backward_finite": true,
+  "real_optimizer_updated": true,
+  "versions": {
+    "openrlhf": "0.6.0",
+    "transformers": "4.48.3",
+    "peft": "0.14.0",
+    "deepspeed": "0.16.3",
+    "ray": "2.42.0"
+  }
+}

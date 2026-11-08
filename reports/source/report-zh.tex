@@ -1,0 +1,77 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm,headheight=16pt]{geometry}
+\usepackage{fontspec,xeCJK}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Consolas}[Scale=0.88]
+\setCJKmainfont{SimSun}[BoldFont=Microsoft YaHei]
+\setCJKsansfont{Microsoft YaHei}
+\setCJKmonofont{SimSun}
+\usepackage{amsmath,amssymb,booktabs,tabularx,array,enumitem}
+\usepackage[table]{xcolor}
+\usepackage{fancyhdr,fvextra,hyperref,titlesec}
+\usepackage{graphicx}
+\definecolor{inkblue}{HTML}{234D66}
+\definecolor{lightblue}{HTML}{EDF3F6}
+\definecolor{muted}{HTML}{59636B}
+\hypersetup{colorlinks=true,urlcolor=inkblue,linkcolor=inkblue,
+ pdftitle={反馈驱动的语言模型与程序优化：两个小规模实证案例},pdfauthor={Research Contributors}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\setlength{\emergencystretch}{1em}
+\renewcommand{\baselinestretch}{1.16}
+\renewcommand{\arraystretch}{1.18}
+\setlist{nosep,leftmargin=1.6em,topsep=3pt}
+\setcounter{secnumdepth}{2}
+\titleformat{\section}{\Large\bfseries\sffamily\color{inkblue}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\sffamily\color{inkblue}}{\thesubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{muted} 反馈驱动优化研究}
+\fancyhead[R]{}
+\fancyfoot[C]{\small\color{muted}\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\key}[1]{\textbf{#1}}
+\newcommand{\smallheading}[1]{\par\medskip{\large\bfseries\color{inkblue}#1}\par\nobreak\smallskip\nobreak}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\tablehead}{\rowcolor{lightblue}}
+\providecommand{\TrainableCount}{Pending}
+\providecommand{\TotalCount}{Pending}
+\providecommand{\BaseCount}{Pending}
+\providecommand{\TrainableRatio}{Pending}
+\providecommand{\ReplacedCount}{Pending}
+
+
+\newcommand{\figcaption}[2]{\refstepcounter{figure}\label{#1}\par\smallskip
+ {\small\color{muted}图~\thefigure：#2\par}\medskip}
+\newcommand{\tablecaption}[2]{\refstepcounter{table}\label{#1}\par\smallskip
+ {\small\color{muted}表~\thetable：#2\par}\smallskip}
+
+
+
+\input{measurements.tex}
+\let\tabcaption\tablecaption
+\begin{document}
+\begin{center}
+{\LARGE\bfseries\sffamily\color{inkblue} 反馈驱动的语言模型与程序优化\par}
+\vspace{3mm}
+{\large 两个小规模实证案例\par}
+\vspace{2mm}
+{\small 8 November 2026}
+\end{center}
+\input{sections/introduction-zh.tex}
+\input{sections/methods-zh.tex}
+\input{sections/results-zh.tex}
+\input{sections/discussion-zh.tex}
+\renewcommand{\refname}{参考文献}
+\input{sections/references.tex}
+\clearpage
+\appendix
+\input{sections/appendix-zh.tex}
+\end{document}

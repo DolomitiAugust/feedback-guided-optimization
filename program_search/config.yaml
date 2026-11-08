@@ -1,0 +1,188 @@
+project_name: alphaevolve_circle_packing_n26
+path_resolution: cwd
+background: |
+  Design a deterministic constructor for packing exactly 26 disjoint circles
+  inside the unit square [0, 1] x [0, 1]. The constructor must return a NumPy
+  centers array with shape (26, 2) and a non-negative finite radii array with
+  shape (26,). Every circle must remain within the square and no pair may
+  overlap. The optimization objective is to maximize the sum of all radii.
+random_seed: 42
+base_dir: ./runs
+workspace:
+  auto_create: true
+  subdirs:
+    output: output
+    logs: logs
+    checkpoints: checkpoints
+    generated: generated
+    cache: cache
+    temp: temp
+providers: []
+coder:
+  type: custom
+  provider: default
+  timeout: 600
+  max_retries: 2
+  temperature: 0.7
+  max_gen_tokens: 32768
+  context_max_tokens: 8192
+  default_extension: py
+  log_to_console: false
+  prompt_template: |
+    Improve the implementation between EVOLVE_START and EVOLVE_END in solve.py.
+    Implement construct_packing(num_circles=26), optionally with helper functions
+    inside the same evolvable block. It must return exactly two values:
+    centers and radii. centers must be convertible to a finite NumPy array with
+    shape (26, 2); radii must be convertible to a finite, non-negative NumPy
+    array with shape (26,). All circles must lie inside [0, 1] x [0, 1] and
+    every pair must be disjoint. Maximize sum(radii). Do not modify the JSON CLI
+    outside the evolvable block. Return only the replacement evolvable code.
+  provider_model: ''
+  mutation_prompt_template: null
+planner:
+  type: llm_evolution
+  provider: default
+  selection_strategy: weighted
+  parent_selection_strategy: tournament
+  build:
+    script: {}
+    timeout: 60
+  samplers:
+    - name: init_sampler
+    - name: mutation_sampler
+    - name: crossover_sampler
+  provider_model: ''
+  mask_evolve_blocks: false
+evaluator:
+  type: custom
+  module: upstream/evaluator.py:CirclePackingEvaluator
+  timeout: 1200
+  max_retries: 0
+  parallel: true
+  batch_size: 5
+  metrics:
+    - sum_radii
+    - validity
+  provider: default
+  provider_model: ''
+  dataset:
+    mode: files
+    files: null
+    path: null
+    recursive: true
+    pattern: null
+evolution:
+  type: island_ga
+  max_generations: 2
+  early_stop_patience: 8
+  early_stop_threshold: 0.000001
+  checkpoint_interval: 1
+  max_checkpoints: 3
+  elite_ratio: 0.2
+  mutation_rate: 0.3
+  crossover_rate: 0.5
+  parent_selection_strategy: tournament
+  survival_selection_strategy: truncation
+  tournament_size: 2
+  num_islands: 2
+  island_population_size: 2
+  migration_interval: 1
+  migration_rate: 0.2
+  migration_strategy: best
+  migration_topology: ring
+  parallel_islands: true
+  human_readable_timing: true
+  population_size: 4
+  max_llm_concurrency: 2
+  per_island_config: null
+multimodal:
+  enabled: false
+  max_images_per_prompt: 3
+  image_max_size_kb: 512
+  include_observation_text: true
+  two_step_refinement: false
+  behavior_storage: rendered
+logging:
+  level: INFO
+  format: null
+  file: null
+  console: true
+  json_format: false
+version_control:
+  enabled: true
+  type: git_worktree
+  local_path: circle_packing/algorithm
+  remote_url: null
+  revision: null
+  auto_initialize: true
+  auto_cleanup: true
+  max_worktree_age_days: 7
+  max_worktrees: 100
+  default_branch: main
+  commit_message_template: 'Algorithm {algorithm_id}: {description}'
+repo_analyzer:
+  type: evolve_detector
+  context_lines_before: 5
+  context_lines_after: 5
+  include:
+    - '*.py'
+  exclude:
+    - .git/**
+    - __pycache__/**
+    - '*.pyc'
+memory:
+  enabled: false
+  type: local_yaml
+  include_user_memory: false
+  include_project_memory: false
+  include_task_memory: true
+  user_memory_limit: 0
+  project_memory_limit: 0
+  task_memory_limit: 5
+  mindmemos_search_strategy: fast
+  mindmemos_rerank: false
+  mindmemos_score_threshold: null
+  mindmemos_fail_open: true
+  module: null
+  max_entries: 10000
+  similarity_threshold: 0.8
+  decay_factor: 0.99
+  mindmemos_request_timeout: 300
+  mindmemos_add_timeout: 300
+  mindmemos_context_char_budget: 20000
+  mindmemos_elite_code_slots: 1
+  mindmemos_elite_code_char_budget: 12000
+  mindmemos_extraction_prompt_language: auto
+  mindmemos_sync_static_cards: false
+  mindmemos_allow_remote_clear: false
+  retrieval_mode: auto
+  task_injection_mode: topk
+  task_injection_lambda: 0.5
+  auto_extraction:
+    type: llm_card_extractor
+    module: null
+    enabled: false
+    max_cards_per_generation: 3
+    extraction_temperature: 0.3
+    extract_good: true
+    good_score_threshold: null
+    good_relative_threshold: 0.8
+    extract_bad: true
+    bad_score_threshold: null
+    bad_relative_threshold: 0.2
+    extract_on_failure: true
+  max_prompt_cards: 5
+  persist: true
+embedding:
+  type: null
+  base_url: null
+  api_key: ''
+  auth_token: ''
+  model: ''
+  text_task: null
+  code_task: null
+  dim: 3072
+  timeout: 60
+  embedding_func_max_async: 2
+  text_config: null
+  code_config: null

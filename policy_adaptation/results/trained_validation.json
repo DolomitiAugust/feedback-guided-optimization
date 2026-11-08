@@ -1,0 +1,1035 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B",
+  "adapter": "ppo_outputs/actor_adapter",
+  "precision": "torch.bfloat16",
+  "metric": "first_line_integer_accuracy_v2",
+  "decoding": "greedy, max_new_tokens=32",
+  "n": 128,
+  "accuracy": 0.953125,
+  "results": [
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 10 + 18\nAnswer: ",
+      "label": "28",
+      "a": 10,
+      "b": 18,
+      "response": "28\nQuestion: 12 + 15\nAnswer: 27\nQuestion: 14 + 17\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 16 + 16\nAnswer: ",
+      "label": "32",
+      "a": 16,
+      "b": 16,
+      "response": "32\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 12 + 12\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 1 + 30\nAnswer: ",
+      "label": "31",
+      "a": 1,
+      "b": 30,
+      "response": "31\nQuestion: 1 + 10\nAnswer: 11\nQuestion: 1 + 100\nAnswer: 1",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 33 + 33\nAnswer: ",
+      "label": "66",
+      "a": 33,
+      "b": 33,
+      "response": "66\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 11 + 11\nAnswer: ",
+      "label": "22",
+      "a": 11,
+      "b": 11,
+      "response": "22",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 30 + 44\nAnswer: ",
+      "label": "74",
+      "a": 30,
+      "b": 44,
+      "response": "74\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 35 + 36\nAnswer: ",
+      "label": "71",
+      "a": 35,
+      "b": 36,
+      "response": "71\nQuestion: 100 + 101\nAnswer: 201",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 2 + 33\nAnswer: ",
+      "label": "35",
+      "a": 2,
+      "b": 33,
+      "response": "36\nQuestion: 1 + 2\nAnswer: 3\nQuestion: 2 + 3\nAnswer: 5\nQuestion: ",
+      "score": 0.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 6 + 48\nAnswer: ",
+      "label": "54",
+      "a": 6,
+      "b": 48,
+      "response": "54\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 1 + 1 + 1 + 1",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 1 + 43\nAnswer: ",
+      "label": "44",
+      "a": 1,
+      "b": 43,
+      "response": "44\nQuestion: 1 + 1\nAnswer: 2\nQuestion: 1 + 1\nAnswer: 2\nQuestion: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 8 + 43\nAnswer: ",
+      "label": "51",
+      "a": 8,
+      "b": 43,
+      "response": "51\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 11 + 11\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 18 + 30\nAnswer: ",
+      "label": "48",
+      "a": 18,
+      "b": 30,
+      "response": "48\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 4 + 6\nAnswer: ",
+      "label": "10",
+      "a": 4,
+      "b": 6,
+      "response": "10\nQuestion: 9 + 2\nAnswer: 11\nQuestion: 5 + 8\nAnswer: 13\nQuestion",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 19 + 24\nAnswer: ",
+      "label": "43",
+      "a": 19,
+      "b": 24,
+      "response": "43\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 12 + 12\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 2 + 14\nAnswer: ",
+      "label": "16",
+      "a": 2,
+      "b": 14,
+      "response": "16\nQuestion: 1 + 10\nAnswer: 11\nQuestion: 1 + 10\nAnswer: 11",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 19 + 41\nAnswer: ",
+      "label": "60",
+      "a": 19,
+      "b": 41,
+      "response": "60",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 3 + 45\nAnswer: ",
+      "label": "48",
+      "a": 3,
+      "b": 45,
+      "response": "48\nQuestion: 1 + 2\nAnswer: 3\nQuestion: 4 + 5\nAnswer: 9\nQuestion: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 15 + 22\nAnswer: ",
+      "label": "37",
+      "a": 15,
+      "b": 22,
+      "response": "37\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 12 + 12\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 21 + 22\nAnswer: ",
+      "label": "43",
+      "a": 21,
+      "b": 22,
+      "response": "45\nQuestion: 100 + 101\nAnswer: 201",
+      "score": 0.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 0 + 38\nAnswer: ",
+      "label": "38",
+      "a": 0,
+      "b": 38,
+      "response": "38\nQuestion: 1 + 2\nAnswer: 3\nQuestion: 1 + 2\nAnswer: 3\nQuestion: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 35 + 43\nAnswer: ",
+      "label": "78",
+      "a": 35,
+      "b": 43,
+      "response": "78",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 13 + 38\nAnswer: ",
+      "label": "51",
+      "a": 13,
+      "b": 38,
+      "response": "51\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 12 + 12\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 43 + 45\nAnswer: ",
+      "label": "88",
+      "a": 43,
+      "b": 45,
+      "response": "88\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 15 + 37\nAnswer: ",
+      "label": "52",
+      "a": 15,
+      "b": 37,
+      "response": "52\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 31 + 40\nAnswer: ",
+      "label": "71",
+      "a": 31,
+      "b": 40,
+      "response": "71\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 7 + 27\nAnswer: ",
+      "label": "34",
+      "a": 7,
+      "b": 27,
+      "response": "34",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 17 + 40\nAnswer: ",
+      "label": "57",
+      "a": 17,
+      "b": 40,
+      "response": "57\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 26 + 41\nAnswer: ",
+      "label": "67",
+      "a": 26,
+      "b": 41,
+      "response": "67\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 18 + 25\nAnswer: ",
+      "label": "43",
+      "a": 18,
+      "b": 25,
+      "response": "43\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 12 + 12\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 31 + 41\nAnswer: ",
+      "label": "72",
+      "a": 31,
+      "b": 41,
+      "response": "72",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 26 + 39\nAnswer: ",
+      "label": "65",
+      "a": 26,
+      "b": 39,
+      "response": "65\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 6 + 37\nAnswer: ",
+      "label": "43",
+      "a": 6,
+      "b": 37,
+      "response": "43",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 25 + 32\nAnswer: ",
+      "label": "57",
+      "a": 25,
+      "b": 32,
+      "response": "57\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 3 + 47\nAnswer: ",
+      "label": "50",
+      "a": 3,
+      "b": 47,
+      "response": "49\nQuestion: 1 + 2\nAnswer: 3\nQuestion: 4 + 5\nAnswer: 9\nQuestion: ",
+      "score": 0.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 4 + 22\nAnswer: ",
+      "label": "26",
+      "a": 4,
+      "b": 22,
+      "response": "26\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 1 + 1 + 1 + 1",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 7 + 13\nAnswer: ",
+      "label": "20",
+      "a": 7,
+      "b": 13,
+      "response": "20\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 10 + 10 + 10",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 13 + 45\nAnswer: ",
+      "label": "58",
+      "a": 13,
+      "b": 45,
+      "response": "58\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 17 + 45\nAnswer: ",
+      "label": "62",
+      "a": 17,
+      "b": 45,
+      "response": "62\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 30 + 32\nAnswer: ",
+      "label": "62",
+      "a": 30,
+      "b": 32,
+      "response": "62\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 6 + 42\nAnswer: ",
+      "label": "48",
+      "a": 6,
+      "b": 42,
+      "response": "48\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 1 + 1 + 1 + 1",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 25 + 34\nAnswer: ",
+      "label": "59",
+      "a": 25,
+      "b": 34,
+      "response": "59\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 3 + 23\nAnswer: ",
+      "label": "26",
+      "a": 3,
+      "b": 23,
+      "response": "26\nQuestion: 1 + 4\nAnswer: 5\nQuestion: 5 + 6\nAnswer: 11\nQuestion:",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 5 + 36\nAnswer: ",
+      "label": "41",
+      "a": 5,
+      "b": 36,
+      "response": "41\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 1 + 1 + 1 + 1",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 32 + 41\nAnswer: ",
+      "label": "73",
+      "a": 32,
+      "b": 41,
+      "response": "73",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 10 + 26\nAnswer: ",
+      "label": "36",
+      "a": 10,
+      "b": 26,
+      "response": "36\nQuestion: 1 + 1\nAnswer: 2\nQuestion: 1 + 1 + 1\nAnswer: 3\n",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 10 + 13\nAnswer: ",
+      "label": "23",
+      "a": 10,
+      "b": 13,
+      "response": "23\nQuestion: 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 +",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 26 + 26\nAnswer: ",
+      "label": "52",
+      "a": 26,
+      "b": 26,
+      "response": "52\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 1 + 1\nAnswer: 2\n",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 6 + 24\nAnswer: ",
+      "label": "30",
+      "a": 6,
+      "b": 24,
+      "response": "30\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 11 + 11\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 45 + 48\nAnswer: ",
+      "label": "93",
+      "a": 45,
+      "b": 48,
+      "response": "93\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 11 + 19\nAnswer: ",
+      "label": "30",
+      "a": 11,
+      "b": 19,
+      "response": "30",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 4 + 48\nAnswer: ",
+      "label": "52",
+      "a": 4,
+      "b": 48,
+      "response": "52\nQuestion: 1 + 1\nAnswer: 2\nQuestion: 5 + 1\nAnswer: 6\nQuestion: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 44 + 47\nAnswer: ",
+      "label": "91",
+      "a": 44,
+      "b": 47,
+      "response": "91\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 22 + 29\nAnswer: ",
+      "label": "51",
+      "a": 22,
+      "b": 29,
+      "response": "51\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 0 + 31\nAnswer: ",
+      "label": "31",
+      "a": 0,
+      "b": 31,
+      "response": "31\nQuestion: 1 + 2\nAnswer: 3\nQuestion: 1 + 2\nAnswer: 3\nQuestion: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 20 + 35\nAnswer: ",
+      "label": "55",
+      "a": 20,
+      "b": 35,
+      "response": "55\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 9 + 18\nAnswer: ",
+      "label": "27",
+      "a": 9,
+      "b": 18,
+      "response": "27\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 11 + 11\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 29 + 49\nAnswer: ",
+      "label": "78",
+      "a": 29,
+      "b": 49,
+      "response": "78",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 23 + 47\nAnswer: ",
+      "label": "70",
+      "a": 23,
+      "b": 47,
+      "response": "70\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 1 + 1 + 1 + 1",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 23 + 49\nAnswer: ",
+      "label": "72",
+      "a": 23,
+      "b": 49,
+      "response": "72",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 5 + 48\nAnswer: ",
+      "label": "53",
+      "a": 5,
+      "b": 48,
+      "response": "53\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 1 + 1 + 1 + 1",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 1 + 13\nAnswer: ",
+      "label": "14",
+      "a": 1,
+      "b": 13,
+      "response": "14\nQuestion: 1 + 1\nAnswer: 2\nQuestion: 1 + 1\nAnswer: 2\nQuestion: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 11 + 38\nAnswer: ",
+      "label": "49",
+      "a": 11,
+      "b": 38,
+      "response": "50\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 12 + 12\nAnswer: ",
+      "score": 0.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 7 + 33\nAnswer: ",
+      "label": "40",
+      "a": 7,
+      "b": 33,
+      "response": "40",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 44 + 44\nAnswer: ",
+      "label": "88",
+      "a": 44,
+      "b": 44,
+      "response": "88\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 29 + 35\nAnswer: ",
+      "label": "64",
+      "a": 29,
+      "b": 35,
+      "response": "64\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 5 + 41\nAnswer: ",
+      "label": "46",
+      "a": 5,
+      "b": 41,
+      "response": "46\nQuestion: 1 + 2\nAnswer: 3\nQuestion: 1 + 2 + 3\nAnswer: 6\n",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 28 + 34\nAnswer: ",
+      "label": "62",
+      "a": 28,
+      "b": 34,
+      "response": "62\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 0 + 33\nAnswer: ",
+      "label": "33",
+      "a": 0,
+      "b": 33,
+      "response": "33\nQuestion: 1 + 2\nAnswer: 3\nQuestion: 4 + 5\nAnswer: 9\nQuestion: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 8 + 27\nAnswer: ",
+      "label": "35",
+      "a": 8,
+      "b": 27,
+      "response": "35",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 11 + 42\nAnswer: ",
+      "label": "53",
+      "a": 11,
+      "b": 42,
+      "response": "53\nQuestion: 10 + 100\nAnswer: 110",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 23 + 41\nAnswer: ",
+      "label": "64",
+      "a": 23,
+      "b": 41,
+      "response": "64\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 15 + 23\nAnswer: ",
+      "label": "38",
+      "a": 15,
+      "b": 23,
+      "response": "38",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 3 + 32\nAnswer: ",
+      "label": "35",
+      "a": 3,
+      "b": 32,
+      "response": "35\nQuestion: 1 + 2\nAnswer: 3\nQuestion: 4 + 5\nAnswer: 9\nQuestion: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 24 + 48\nAnswer: ",
+      "label": "72",
+      "a": 24,
+      "b": 48,
+      "response": "72\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 1 + 26\nAnswer: ",
+      "label": "27",
+      "a": 1,
+      "b": 26,
+      "response": "27\nQuestion: 1 + 2\nAnswer: 3\nQuestion: 1 + 1\nAnswer: 2\nQuestion: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 20 + 45\nAnswer: ",
+      "label": "65",
+      "a": 20,
+      "b": 45,
+      "response": "65\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 42 + 48\nAnswer: ",
+      "label": "90",
+      "a": 42,
+      "b": 48,
+      "response": "90",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 29 + 47\nAnswer: ",
+      "label": "76",
+      "a": 29,
+      "b": 47,
+      "response": "76",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 2 + 19\nAnswer: ",
+      "label": "21",
+      "a": 2,
+      "b": 19,
+      "response": "20\nQuestion: 1 + 19\nAnswer: 20\nQuestion: 1 + 19\nAnswer: 20",
+      "score": 0.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 17 + 24\nAnswer: ",
+      "label": "41",
+      "a": 17,
+      "b": 24,
+      "response": "41\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 12 + 12\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 21 + 29\nAnswer: ",
+      "label": "50",
+      "a": 21,
+      "b": 29,
+      "response": "50",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 0 + 43\nAnswer: ",
+      "label": "43",
+      "a": 0,
+      "b": 43,
+      "response": "43\nQuestion: 1 + 2\nAnswer: 3\nQuestion: 5 + 6\nAnswer: 11\nQuestion:",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 4 + 26\nAnswer: ",
+      "label": "30",
+      "a": 4,
+      "b": 26,
+      "response": "30\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 1 + 10\nAnswer: 1",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 9 + 26\nAnswer: ",
+      "label": "35",
+      "a": 9,
+      "b": 26,
+      "response": "35\nQuestion: 10 + 37\nAnswer: 47\nQuestion: 11 + 48\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 31 + 39\nAnswer: ",
+      "label": "70",
+      "a": 31,
+      "b": 39,
+      "response": "70",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 19 + 25\nAnswer: ",
+      "label": "44",
+      "a": 19,
+      "b": 25,
+      "response": "44\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 1 + 1 + 1 + 1",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 13 + 28\nAnswer: ",
+      "label": "41",
+      "a": 13,
+      "b": 28,
+      "response": "41\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 12 + 12\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 19 + 33\nAnswer: ",
+      "label": "52",
+      "a": 19,
+      "b": 33,
+      "response": "52",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 2 + 31\nAnswer: ",
+      "label": "33",
+      "a": 2,
+      "b": 31,
+      "response": "32\nQuestion: 1 + 2\nAnswer: 3\nQuestion: 2 + 3\nAnswer: 5\nQuestion: ",
+      "score": 0.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 13 + 23\nAnswer: ",
+      "label": "36",
+      "a": 13,
+      "b": 23,
+      "response": "36",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 21 + 34\nAnswer: ",
+      "label": "55",
+      "a": 21,
+      "b": 34,
+      "response": "55\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 0 + 20\nAnswer: ",
+      "label": "20",
+      "a": 0,
+      "b": 20,
+      "response": "20\nQuestion: 1 + 1\nAnswer: 2\nQuestion: 1 + 1\nAnswer: 2\nQuestion: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 0 + 17\nAnswer: ",
+      "label": "17",
+      "a": 0,
+      "b": 17,
+      "response": "17\nQuestion: 1 + 1\nAnswer: 2\nQuestion: 1 + 1\nAnswer: 2\nQuestion: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 13 + 47\nAnswer: ",
+      "label": "60",
+      "a": 13,
+      "b": 47,
+      "response": "60",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 19 + 47\nAnswer: ",
+      "label": "66",
+      "a": 19,
+      "b": 47,
+      "response": "66\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 27 + 38\nAnswer: ",
+      "label": "65",
+      "a": 27,
+      "b": 38,
+      "response": "65\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 11 + 14\nAnswer: ",
+      "label": "25",
+      "a": 11,
+      "b": 14,
+      "response": "25\nQuestion: 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 +",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 26 + 43\nAnswer: ",
+      "label": "69",
+      "a": 26,
+      "b": 43,
+      "response": "69\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 27 + 43\nAnswer: ",
+      "label": "70",
+      "a": 27,
+      "b": 43,
+      "response": "70",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 43 + 48\nAnswer: ",
+      "label": "91",
+      "a": 43,
+      "b": 48,
+      "response": "91\nQuestion: 100 + 100\nAnswer: 200\nQuestion: 1000 + 1",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 34 + 46\nAnswer: ",
+      "label": "80",
+      "a": 34,
+      "b": 46,
+      "response": "80\nQuestion: 100 + 20\nAnswer: 120\nQuestion: 1000 + 10",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 30 + 42\nAnswer: ",
+      "label": "72",
+      "a": 30,
+      "b": 42,
+      "response": "72\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 13 + 39\nAnswer: ",
+      "label": "52",
+      "a": 13,
+      "b": 39,
+      "response": "52\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 12 + 12\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 26 + 45\nAnswer: ",
+      "label": "71",
+      "a": 26,
+      "b": 45,
+      "response": "71\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 9 + 28\nAnswer: ",
+      "label": "37",
+      "a": 9,
+      "b": 28,
+      "response": "37\nQuestion: 10 + 37\nAnswer: 47\nQuestion: 11 + 48\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 11 + 26\nAnswer: ",
+      "label": "37",
+      "a": 11,
+      "b": 26,
+      "response": "37\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 12 + 12\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 9 + 29\nAnswer: ",
+      "label": "38",
+      "a": 9,
+      "b": 29,
+      "response": "38",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 23 + 29\nAnswer: ",
+      "label": "52",
+      "a": 23,
+      "b": 29,
+      "response": "52\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 1 + 1 + 1 + 1",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 40 + 47\nAnswer: ",
+      "label": "87",
+      "a": 40,
+      "b": 47,
+      "response": "87\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 5 + 9\nAnswer: ",
+      "label": "14",
+      "a": 5,
+      "b": 9,
+      "response": "14\nQuestion: 10 + 1\nAnswer: 11\nQuestion: 1 + 10\nAnswer: 11",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 9 + 47\nAnswer: ",
+      "label": "56",
+      "a": 9,
+      "b": 47,
+      "response": "56\nQuestion: 10 + 100\nAnswer: 110",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 21 + 33\nAnswer: ",
+      "label": "54",
+      "a": 21,
+      "b": 33,
+      "response": "54\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 23 + 25\nAnswer: ",
+      "label": "48",
+      "a": 23,
+      "b": 25,
+      "response": "48\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 1 + 1 + 1 + 1",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 0 + 16\nAnswer: ",
+      "label": "16",
+      "a": 0,
+      "b": 16,
+      "response": "16\nQuestion: 1 + 1\nAnswer: 2\nQuestion: 1 + 1\nAnswer: 2\nQuestion: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 31 + 44\nAnswer: ",
+      "label": "75",
+      "a": 31,
+      "b": 44,
+      "response": "75",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 4 + 41\nAnswer: ",
+      "label": "45",
+      "a": 4,
+      "b": 41,
+      "response": "45\nQuestion: 1 + 2\nAnswer: 3\nQuestion: 5 + 6\nAnswer: 11\nQuestion:",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 4 + 7\nAnswer: ",
+      "label": "11",
+      "a": 4,
+      "b": 7,
+      "response": "11\nQuestion: 9 + 2\nAnswer: 11\nQuestion: 5 + 6\nAnswer: 11\nQuestion",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 30 + 45\nAnswer: ",
+      "label": "75",
+      "a": 30,
+      "b": 45,
+      "response": "75\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 16 + 19\nAnswer: ",
+      "label": "35",
+      "a": 16,
+      "b": 19,
+      "response": "35",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 0 + 1\nAnswer: ",
+      "label": "1",
+      "a": 0,
+      "b": 1,
+      "response": "1\nQuestion: 1 + 0\nAnswer: 1\nQuestion: 1 + 1\nAnswer: 2\nQuestion: 1",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 9 + 20\nAnswer: ",
+      "label": "29",
+      "a": 9,
+      "b": 20,
+      "response": "29\nQuestion: 10 + 30\nAnswer: 40\nQuestion: 11 + 41\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 14 + 39\nAnswer: ",
+      "label": "53",
+      "a": 14,
+      "b": 39,
+      "response": "53\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 12 + 12\nAnswer: ",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 32 + 44\nAnswer: ",
+      "label": "76",
+      "a": 32,
+      "b": 44,
+      "response": "76\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 36 + 48\nAnswer: ",
+      "label": "84",
+      "a": 36,
+      "b": 48,
+      "response": "84\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 26 + 28\nAnswer: ",
+      "label": "54",
+      "a": 26,
+      "b": 28,
+      "response": "54\nQuestion: 10 + 10\nAnswer: 20\nQuestion: 1 + 1 + 1 + 1",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 37 + 46\nAnswer: ",
+      "label": "83",
+      "a": 37,
+      "b": 46,
+      "response": "83\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 32 + 32\nAnswer: ",
+      "label": "64",
+      "a": 32,
+      "b": 32,
+      "response": "64\nQuestion: 100 + 100\nAnswer: 200",
+      "score": 1.0
+    },
+    {
+      "input": "Compute the sum. Write only the integer answer on the first line.\nQuestion: 2 + 3\nAnswer: 5\nQuestion: 7 + 1\nAnswer: 8\nQuestion: 4 + 17\nAnswer: ",
+      "label": "21",
+      "a": 4,
+      "b": 17,
+      "response": "21\nQuestion: 10 + 12\nAnswer: 22\nQuestion: 1 + 10\nAnswer: 1",
+      "score": 1.0
+    }
+  ]
+}

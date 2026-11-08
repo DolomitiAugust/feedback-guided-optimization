@@ -1,0 +1,5 @@
+{
+  "error_type": "RuntimeError",
+  "message": "Existing run output preserved; no restart: ppo_smoke",
+  "recorded_utc": "2026-11-08T09:48:23.523012+00:00"
+}

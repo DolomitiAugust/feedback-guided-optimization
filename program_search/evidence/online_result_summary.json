@@ -1,0 +1,91 @@
+{
+  "snapshot": "attempt02_final_snapshot",
+  "archive_sha256": "b5a633027f4e4c376c48c31424f286e11c85b249811c70009a519b56ed4ef156",
+  "archive_capture_local": "2026-10-31 13:22:05 UTC+08:00",
+  "last_event_utc": "2026-10-31T05:21:18.838336+00:00",
+  "best_online_score": 2.62001380699489,
+  "best_candidate_id": "4705b8e92e1b",
+  "saved_candidate_count": 7,
+  "valid_evaluated_candidates": 5,
+  "known_implementation_failures": 1,
+  "saved_candidate_awaiting_evaluation": 1,
+  "last_completed_generation": 1,
+  "generation_started_at_snapshot": 2,
+  "termination": "Operator reported manually stopping after exporting this snapshot.",
+  "post_stop_server_status_exported": false,
+  "observed_planner_tokens": 70376,
+  "total_task_tokens_and_credits": null,
+  "rows": [
+    {
+      "candidate_id": "fe0aad416d4f",
+      "name": "LP-Dual Gradient Ascent with Inflate-Relax Refinement",
+      "generation": 0,
+      "island": 0,
+      "score": 2.4738734916281095,
+      "timestamp_utc": "2026-10-31T04:46:55.404860+00:00",
+      "local_time": "12:46:55",
+      "elapsed_minutes": 8.902514333333333
+    },
+    {
+      "candidate_id": "4705b8e92e1b",
+      "name": "Deterministic Multi-Start SLSQP with Exact LP Radii",
+      "generation": 0,
+      "island": 1,
+      "score": 2.62001380699489,
+      "timestamp_utc": "2026-10-31T05:08:21.661085+00:00",
+      "local_time": "13:08:21",
+      "elapsed_minutes": 30.340118083333333
+    },
+    {
+      "candidate_id": "d3fb7a9f0bab",
+      "name": "Deterministic Multi-Start Active-Set Variable-Radius Packing",
+      "generation": 0,
+      "island": 1,
+      "score": 2.46497233938857,
+      "timestamp_utc": "2026-10-31T05:10:19.681699+00:00",
+      "local_time": "13:10:19",
+      "elapsed_minutes": 32.30712831666667
+    },
+    {
+      "candidate_id": "34836c89e4f0",
+      "name": "Deterministic Hex-Row Seeds with Top-K Basin Polishing",
+      "generation": 1,
+      "island": 1,
+      "score": 2.6160279761806717,
+      "timestamp_utc": "2026-10-31T05:18:13.865046+00:00",
+      "local_time": "13:18:13",
+      "elapsed_minutes": 40.2101841
+    },
+    {
+      "candidate_id": "a15ea29f0ceb",
+      "name": "Coordinate Pattern-Search Polish of LP-Dual Layouts",
+      "generation": 1,
+      "island": 0,
+      "score": 2.514353475264711,
+      "timestamp_utc": "2026-10-31T05:18:47.872218+00:00",
+      "local_time": "13:18:47",
+      "elapsed_minutes": 40.7769703
+    }
+  ],
+  "local_verification": {
+    "source_snapshot": "attempt02_snapshot03",
+    "candidate_id": "4705b8e92e1b",
+    "source_sha256": "c6d69edd01c4e8ab34330f1d9d55950116c806e8e71f71e6315c9a61e0a38172",
+    "evaluator_sha256": "a99db383a078f6e6b41423ac15705b65c2eaf6df41b9624cfb691f023ba58ccd",
+    "method": "Original exported constructor run locally; unchanged exported geometry method extracted via AST. Not a new online evaluation.",
+    "python": "3.14.2",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "elapsed_seconds": 4.759376200003317,
+    "circle_count": 26,
+    "online_score": 2.62001380699489,
+    "local_score": 2.6206092130170973,
+    "local_minus_online": 0.00059540602220709,
+    "geometry_error": null,
+    "valid": true,
+    "minimum_boundary_gap": 1.3832546219560982e-12,
+    "minimum_pair_gap": 1.0173806241908778e-12,
+    "packing_file": "evidence/best_local_packing.json"
+  },
+  "interpretation": "Valid cloud evaluations. The best initial-population score remained unbeaten after generation 1. Not an automatically completed two-generation benchmark."
+}

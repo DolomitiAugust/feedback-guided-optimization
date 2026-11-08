@@ -1,0 +1,14 @@
+{
+  "kind": "Local preparation check only; NOT an online platform demo",
+  "python": "3.14.2",
+  "numpy": "2.4.4",
+  "repository_commit": "dfde353e753e9021fffe88b5b034bf0c84d90b60",
+  "candidate_sha256": "66655191be3d71b6b9bd6b8b7be3fc996f0b683dca9569a60ed816bfb08a1bca",
+  "evaluator_sha256": "a99db383a078f6e6b41423ac15705b65c2eaf6df41b9624cfb691f023ba58ccd",
+  "circle_count": 26,
+  "sum_radii": 0.9597642169962063,
+  "geometry_error": null,
+  "valid": true,
+  "online_demo_completed": false,
+  "method": "Execute original constructor; execute the unchanged upstream geometry method extracted via AST. Full framework and web worker are not exercised."
+}

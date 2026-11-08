@@ -1,0 +1,16 @@
+{
+  "actor": {
+    "sha256": "fe97f9d9cd1e86eab3bfe1b50e753cf9ca68ffbcdbad49addcac573e0775b498",
+    "all_finite": true,
+    "b_tensors": 168,
+    "nonzero_b_tensors": 168
+  },
+  "critic": {
+    "sha256": "c37d7bed897480de861dc9f473d35878bebbc6a6c9a7fcbd3cb49be78e14a00c",
+    "all_finite": true,
+    "b_tensors": 169,
+    "nonzero_b_tensors": 169
+  },
+  "actor_reload_forward_finite": true,
+  "reloaded_response": "56\nQuestion: 10"
+}

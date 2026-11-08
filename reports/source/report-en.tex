@@ -1,0 +1,74 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm,headheight=16pt]{geometry}
+\usepackage{fontspec,xeCJK}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Consolas}[Scale=0.86]
+\setCJKmainfont{SimSun}[BoldFont=Microsoft YaHei]
+\setCJKsansfont{Microsoft YaHei}
+\setCJKmonofont{SimSun}
+\usepackage{amsmath,amssymb,booktabs,tabularx,array,enumitem}
+\usepackage[table]{xcolor}
+\usepackage{fancyhdr,fvextra,hyperref,titlesec,graphicx}
+\definecolor{inkblue}{HTML}{234D66}
+\definecolor{lightblue}{HTML}{EDF3F6}
+\definecolor{muted}{HTML}{59636B}
+\hypersetup{colorlinks=true,urlcolor=inkblue,linkcolor=inkblue,citecolor=inkblue,
+ pdftitle={Feedback-Guided Optimization of Language Models and Programs: Two Small-Scale Case Studies},
+ pdfauthor={Research Contributors}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\setlength{\emergencystretch}{2em}
+\renewcommand{\baselinestretch}{1.08}
+\renewcommand{\arraystretch}{1.15}
+\setlist{nosep,leftmargin=1.6em,topsep=3pt}
+\setcounter{secnumdepth}{2}
+\titleformat{\section}{\Large\bfseries\sffamily\color{inkblue}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\sffamily\color{inkblue}}{\thesubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+\titlespacing*{\subsection}{0pt}{8pt}{4pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\sffamily\color{muted} Feedback-guided optimization}
+\fancyhead[R]{}
+\fancyfoot[C]{\small\color{muted}\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\key}[1]{\textbf{#1}}
+\newcommand{\smallheading}[1]{\par\medskip{\large\bfseries\color{inkblue}#1}\par\nobreak\smallskip\nobreak}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\tablehead}{\rowcolor{lightblue}}
+\newcommand{\figcaption}[2]{\par\begingroup\small\color{muted}\refstepcounter{figure}\label{#1}\textbf{Figure~\thefigure.} #2\par\endgroup\smallskip}
+\newcommand{\tabcaption}[2]{\par\smallskip\begingroup\small\refstepcounter{table}\label{#1}\textbf{Table~\thetable.} #2\par\endgroup\smallskip}
+\providecommand{\TrainableCount}{Pending}
+\providecommand{\TotalCount}{Pending}
+\providecommand{\BaseCount}{Pending}
+\providecommand{\TrainableRatio}{Pending}
+\providecommand{\ReplacedCount}{Pending}
+
+
+
+
+\input{measurements.tex}
+\let\tablecaption\tabcaption
+\begin{document}
+\begin{center}
+{\LARGE\bfseries\sffamily\color{inkblue} Feedback-Guided Optimization of Language Models and Programs\par}
+\vspace{3mm}
+{\large Two Small-Scale Empirical Case Studies\par}
+\vspace{2mm}
+{\small 8 November 2026}
+\end{center}
+\input{sections/introduction-en.tex}
+\input{sections/methods-en.tex}
+\input{sections/results-en.tex}
+\input{sections/discussion-en.tex}
+\input{sections/references.tex}
+\clearpage
+\appendix
+\input{sections/appendix-en.tex}
+\end{document}

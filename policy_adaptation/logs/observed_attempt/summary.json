@@ -1,0 +1,29 @@
+{
+  "source": "Historical executed notebook retained in the private source archive",
+  "source_sha256": "61712bcb38d76be284c39bb0e24691cefd041ee7bb52e70e8fdb6437995fb461",
+  "evidence_type": "Preserved notebook console output; rounded metrics, not TensorBoard export",
+  "platform": "Google Colab",
+  "gpu": "Tesla T4",
+  "precision": "fp32",
+  "baseline_correct": 118,
+  "baseline_n": 128,
+  "baseline_accuracy": 0.921875,
+  "training_prompts": 512,
+  "completed_rollout_batches": 32,
+  "rollout_loop_elapsed_console": "15:40",
+  "training_exit_code": 1,
+  "final_logged_metrics_rounded": {
+    "completed_rollout_batch": 32,
+    "elapsed_console": "15:40",
+    "policy_loss": -0.444,
+    "kl": 1.06,
+    "reward": 0.938,
+    "critic_loss": 0.0129,
+    "response_length": 5.0
+  },
+  "adapter_export_verified": false,
+  "post_training_evaluation_available": false,
+  "accuracy_improvement": null,
+  "end_to_end_training_completed": false,
+  "caution": "Training reward cannot be compared with greedy validation accuracy."
+}

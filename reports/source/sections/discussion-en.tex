@@ -1,0 +1,35 @@
+\section{Discussion}
+\subsection{What feedback accomplished in the two cases}
+In policy learning, the updated object is a set of adapter matrices, and the decisive evidence is the saved policy's paired behavior. Here five previously incorrect questions became correct while 117 remained correct. Training reward and loss help describe optimization, but they cannot substitute for that comparison.
+
+In program search, the updated object is executable code. Candidate validity is a prerequisite for interpreting its score, and retaining a strong incumbent matters even when a later child improves only its own parent. The global winner's appearance during initialization is an informative result: the observed trajectory provides no evidence that subsequent evolution improved the best solution.
+
+These cases share an evaluator-mediated feedback cycle, but not a common outcome scale. A language-model accuracy difference and a geometric radius sum are not combined into a single performance claim. Independent verification instead asks a common question: can the stated outcome be traced to a valid saved artifact under a specified evaluation procedure?
+
+\subsection{Limitations and alternative explanations}
+\begin{itemize}
+\item \key{One seed and a narrow task.} The policy experiment uses one seed, a 0.5B model and a short addition task. There is no learning-rate, batch-size or rank ablation, no repeated-run uncertainty estimate and no evidence of broader reasoning gains.
+\item \key{Development validation.} The first-line protocol was revised after inspecting validation responses. Although the final before/after questions and settings match, this is not an untouched test set. Extra text after the first answer line is not penalized.
+\item \key{Implementation and precision.} PPO explicitly uses eager attention; the unchanged paired evaluator may select SDPA. Both evaluations use BF16 on the same A10. The older FP32 T4 result is a separate record, not the baseline for the successful run.
+\item \key{Short program-search coverage.} Five valid evaluations cannot characterize the search distribution. The configured budget was not automatically completed, and no score is assigned to an unfinished evaluation.
+\item \key{Numerical and service reproducibility.} The local and online circle scores differ slightly. Versioned source does not guarantee identical remote LLM responses, hosted revisions or numerical trajectories. Total task cost and credits are unavailable.
+\end{itemize}
+
+\subsection{Engineering experience as part of the evidence}
+The main practical challenge was making each stage observable and preservable. Earlier GPU availability and network failures repeatedly blocked dependency installation. A prior PPO loop completed but failed a tied-weight serialization check. The successful continuation therefore required a real CUDA/optimizer preflight, a short independent save/reload check and a fresh full run with protected outputs.
+
+The final environment retains a visible exception: upstream OpenRLHF declares FlashAttention, which is absent. Source-hash-checked delayed imports restrict execution to the supported single-GPU eager path; they do not replace FlashAttention's computation or permit ring attention. The base model, PPO calculations, data and budget remain unchanged. This experience supports a methodological lesson: diagnose the failing stage and verify the resulting artifact, rather than treating elapsed time or a completed loop as experimental completion. Detailed provenance and the repeated-start guard are recorded in Appendix~\ref{app:recovery}.
+
+\section{Future work: two testable improvements to program search}\label{sec:future}
+\subsection{Evidence-grounded reflection and selective memory}
+The framework already offers reflection and scoped memory.\cite{memory} A useful extension would store verified repair lessons linked to candidate and evaluator versions. Failures would identify specific overlapping circles, boundary violations, array-shape errors or timeouts, with the relevant code. Retrieval would favor a few task-relevant, nonduplicate lessons and distinguish tested repairs from unverified suggestions.
+
+The hypothesis is that more precise feedback reduces repeated invalid programs. Reflection and retrieval also consume tokens and can preserve stale assumptions. A controlled study should compare otherwise identical runs with and without evidence-grounded memory under the same model, evaluator and call budget across several seeds. Primary measurements would be valid-candidate rate, repeated failure rate, best valid score and cost per valid improvement.
+
+\subsection{Diverse proposals with adaptive effort allocation}
+Island search and migration already exist in the framework.\cite{islands} A further policy could reserve distinct roles for local refinement, alternative spatial arrangements and constraint-robust construction. Exact duplicate programs could be rejected before another full evaluation, while a reserved exploration budget would prevent all effort from following the current winner. Allocation would respond to measured valid improvements rather than the novelty of an explanation.
+
+The hypothesis is that distinct directions and adaptive allocation improve search efficiency. They can also waste a short budget on weak directions. Compare fixed, uniform prompting and allocation with role-diverse, adaptive allocation at equal total LLM-call or token cost. Across multiple seeds, report median best valid score and spread, unique valid candidates and time to a predeclared target. Keep the evaluator outside editable program blocks and independently verify every saved winner. Neither proposal was experimentally compared in this study.
+
+\section{Conclusion}
+A complete A10 LoRA-PPO experiment produced saved adapters, a reloadable Actor and a paired increase from 117 to 122 correct arithmetic answers out of 128. A separate LLM-guided program search produced five valid evaluations and an online best radius sum of 2.62001380699489; independent local geometry verification remained a distinct measurement. The two cases show how feedback operates on different artifacts and why execution, selection and validation records are essential to a reproducible empirical claim. Their small scale supports these specific observations, not a general ranking of methods.

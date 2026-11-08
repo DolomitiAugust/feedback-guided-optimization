@@ -1,0 +1,22 @@
+{
+  "status": "verified_successful_first_experiment",
+  "first_success_completed_utc": "2026-11-08T09:48:14.169098+00:00",
+  "later_invocation_utc": "2026-11-08T09:48:23.523012+00:00",
+  "later_invocation_status": "refused_to_overwrite_existing_output",
+  "export_manifest_false_scope": "The later invocation did not launch a new experiment; original success records and raw export manifest are retained unchanged.",
+  "training_exit_code": 0,
+  "rollout_batches": 32,
+  "training_prompts": 512,
+  "validation_prompts": 128,
+  "before_correct": 117,
+  "after_correct": 122,
+  "baseline_accuracy": 0.9140625,
+  "trained_accuracy": 0.953125,
+  "delta_percentage_points": 3.90625,
+  "actor_saved_and_reloaded": true,
+  "critic_adapter_finite_nonzero_checked": true,
+  "critic_reloaded": false,
+  "complete_ppo_optimizer_resume_checkpoint": false,
+  "independent_audit_sha256": "5dd09bead565f5173b752f86b4ba11e0b0179636f735b8f302bbaf35a35c93c9",
+  "original_zip_sha256": "cc0c5fcaaaef4966c8e00612661e746ac9930f098b23ec7f814004cdf8fda3a6"
+}
