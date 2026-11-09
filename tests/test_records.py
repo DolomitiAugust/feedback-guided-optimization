@@ -74,10 +74,13 @@ class RecordedEvidenceTests(unittest.TestCase):
         for i, ((x, y), r) in enumerate(zip(centers, radii)):
             self.assertTrue(all(math.isfinite(v) for v in (x, y, r)))
             self.assertGreaterEqual(r, 0)
-            self.assertGreaterEqual(min(x-r, y-r, 1-x-r, 1-y-r), -1e-10)
+            self.assertLessEqual(r, x)
+            self.assertLessEqual(r, y)
+            self.assertLessEqual(x, 1-r)
+            self.assertLessEqual(y, 1-r)
             for j in range(i):
-                gap = math.hypot(x-centers[j][0], y-centers[j][1]) - r - radii[j]
-                self.assertGreaterEqual(gap, -1e-10)
+                distance = math.hypot(x-centers[j][0], y-centers[j][1])
+                self.assertLessEqual(r + radii[j], distance)
         self.assertAlmostEqual(sum(radii), 2.6206092130170973, places=12)
 
     def test_actor_weights_match_measured_record(self):

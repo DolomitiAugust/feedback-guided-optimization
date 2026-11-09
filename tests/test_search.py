@@ -19,10 +19,32 @@ class SavedSearchTests(unittest.TestCase):
         self.assertTrue(all(math.isfinite(x) and x >= 0 for x in r))
         self.assertAlmostEqual(sum(r), expected, places=13)
         for (x, y), rad in zip(c, r):
-            self.assertGreaterEqual(min(x, y, 1-x, 1-y)-rad, -1e-10)
+            # Match the upstream evaluator's strict boundary comparisons.
+            self.assertLessEqual(rad, x)
+            self.assertLessEqual(rad, y)
+            self.assertLessEqual(x, 1-rad)
+            self.assertLessEqual(y, 1-rad)
         for i in range(26):
             for j in range(i):
-                self.assertGreaterEqual(math.dist(c[i], c[j])-r[i]-r[j], -1e-10)
+                self.assertLessEqual(r[i]+r[j], math.dist(c[i], c[j]))
+
+    def test_tiny_overlap_is_rejected(self):
+        packing = {"centers": [[0.0, 0.0] for _ in range(26)], "radii": [0.0]*26}
+        packing["centers"][:2] = [[0.25, 0.5], [0.5, 0.5]]
+        packing["radii"][:2] = [0.125, 0.125]
+        self.check_geometry(packing, 0.25)  # Tangency is allowed.
+        packing["centers"][1][0] -= 5e-11
+        with self.assertRaises(AssertionError):
+            self.check_geometry(packing, 0.25)
+
+    def test_tiny_boundary_violation_is_rejected(self):
+        packing = {"centers": [[0.5, 0.5] for _ in range(26)], "radii": [0.0]*26}
+        packing["centers"][0] = [0.1, 0.1]
+        packing["radii"][0] = 0.1
+        self.check_geometry(packing, 0.1)
+        packing["centers"][0][0] -= 5e-11
+        with self.assertRaises(AssertionError):
+            self.check_geometry(packing, 0.1)
 
     def test_selected_local_geometry(self):
         self.check_geometry(load("best_local_packing.json"), 2.6206092130170973)

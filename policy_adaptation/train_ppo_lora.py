@@ -20,6 +20,12 @@ TARGETS = ["q_proj", "k_proj", "v_proj", "o_proj",
            "gate_proj", "up_proj", "down_proj", "score"]
 
 
+def normalize_pretrain(reference):
+    """Keep local paths valid when DeepSpeed changes its working directory."""
+    path = Path(reference)
+    return str(path.resolve()) if path.exists() else reference
+
+
 def build_training_args(data: Path, output: Path, max_samples=512,
                         reward_url="http://127.0.0.1:8001/reward",
                         pretrain="Qwen/Qwen2.5-0.5B", bf16=True):
@@ -59,6 +65,7 @@ def main():
     parser.add_argument("--precision", choices=("bf16", "fp32"), default="bf16",
                         help="Use fp32 with a staged FP32 config on free T4/P100 GPUs")
     args = parser.parse_args()
+    args.pretrain = normalize_pretrain(args.pretrain)
     data = ROOT / "data" / "train.jsonl"
     if not data.is_file():
         parser.error("Run prepare_ppo_data.py first")

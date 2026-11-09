@@ -14,8 +14,14 @@
 
 ## 代码与运行
 
-`solve.py` 是导出的最佳候选，直接运行只做 CPU 数值优化，不调用模型服务。命令与依赖见 [英文说明](README.md#run-and-check)。`config.yaml` 保留历史搜索配置，凭据为空，需要兼容的平台环境，不能单独完成在线搜索。`upstream/` 保存官方初始程序、评估器与 BSD 许可证，作者和来源必须保留。
+`solve.py` 是导出的最佳候选，直接运行只做 CPU 数值优化，不调用模型服务。命令与依赖见 [英文说明](README.md#run-and-check)。`config.yaml` 是脱敏后的历史配置模板，凭据为空，不能从本仓库直接运行在线搜索。其中 `version_control.local_path` 保留了原来的 `circle_packing/algorithm` 路径，本仓库没有这个工作目录。`upstream/` 保存官方初始程序、评估器与 BSD 许可证，作者和来源必须保留。
 
 `python tests/test_search.py` 检查保存的数据，不重新搜索；它逐一核查 26 个圆和全部圆对，以及在线最佳值确实发生在初始化阶段。
 
 `python program_search/plot_publication_figures.py` 从原始保存数值重画搜索进度和圆装填图。所有圆心与半径保持原值，坐标轴等比例。在线平台没有导出在线最佳值对应的原始圆位置，因此图里的最佳程序布局明确属于本地独立重现。
+
+## 重建在线搜索环境
+
+如需开展新的在线实验，先获取上游固定修订 `dfde353e753e9021fffe88b5b034bf0c84d90b60` 中完整的 `examples/applications/alphaevolve_math_benchmark` 示例，并准备兼容的 LLM4AD Next 框架与模型供应商配置。保留示例的配套文件以及 `circle_packing/algorithm/solve.py` 工作树结构。起点应使用官方初始构造器；直接以这里保存的最佳候选作为起点，属于另一种实验设置。
+
+然后另复制一份历史模板，按照实际工作目录配置 `version_control.local_path`，并把 `evaluator.module` 调整为实际评估器的位置；公开模板目前使用 `upstream/evaluator.py:CirclePackingEvaluator`。本仓库只提供离线复现所需内容，没有打包完整框架、全部平台示例和模型供应商配置。重建这些组件也不保证恢复当时托管服务的行为或得到相同在线分数。

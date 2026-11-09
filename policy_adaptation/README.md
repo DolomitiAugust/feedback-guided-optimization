@@ -10,6 +10,8 @@ The A10/BF16 run completed 512 prompts in 32 rollout batches (16 prompts each). 
 
 Actor and Critic adapters were saved. The Actor was actually reloaded on GPU and passed finite forward/generation checks; the Critic was checked for finite and nonzero weights but was not reloaded. Full optimizer/resume checkpoints are absent. A historical T4/FP32 run completed its 32-batch loop but failed final model serialization (exit 1); its rounded diagnostics remain in `logs/observed_attempt/` and are not used as the A10 baseline.
 
+The Critic safetensors contain `score.lora_A.weight` and `score.lora_B.weight`, but not the underlying randomly initialized value-head weight. The exported Critic adapter therefore cannot independently restore the complete trained value function. The original files are preserved as recorded, not retroactively completed.
+
 ## CPU behavior checks
 
 Use an isolated CPU environment. These dependencies differ from the pinned PPO environment:
@@ -27,6 +29,8 @@ The measured configuration is recorded in `results/ppo_outputs/run_config.json`;
 
 ```bash
 cd policy_adaptation
+python3.10 -m venv .venv-eager
+source .venv-eager/bin/activate
 bash setup_eager_ppo.sh
 python prepare_cloud_model.py  # stages the exact revision from the report
 python prepare_ppo_data.py
@@ -37,10 +41,12 @@ python check_saved_adapters.py --run-dir new_smoke --pretrain .cloud_model
 python train_ppo_lora.py --run --pretrain .cloud_model --precision bf16 --output new_full_run
 python check_saved_adapters.py --run-dir new_full_run --pretrain .cloud_model
 python evaluate_ppo.py --pretrain .cloud_model --adapter new_full_run/actor_adapter --output trained_validation.json
-python collect_ppo_results.py --run-dir new_full_run
+python collect_ppo_results.py --run-dir new_full_run --baseline baseline_validation.json --trained trained_validation.json --output-dir ../local_outputs/collected
 ```
 
 Run each command separately and stop on error. Use fresh output names. The 16-prompt check is independent of the fresh full experiment. For a paired BF16 baseline, use a BF16-capable GPU and the same base model/precision as the adapted evaluation. The evaluator's saved `precision` field is authoritative. The setup does not start training.
+
+The collector checks model references, the adapted evaluation's run path, precision, decoding and the ordered question/answer pairs before writing results; it rejects existing collection files. Historical evaluation records contain no evaluation-time weight digest, so matching references and paths does not by itself prove which bytes a past evaluation loaded. The published Actor hash and reload evidence are separate records. The public copy omits raw TensorBoard event files, so its committed CSV is the retained scalar evidence; collection from events is for a newly completed run.
 
 The staging helper pins model revision `060db6499f32faf8b98477b0a26969ef7d8b9987`. All model-consuming commands above use that staged directory instead of a mutable remote default. Check that `cloud_model.json` reports `precision: bf16` before reproducing the A10 comparison; an FP32 run is a different experiment.
 

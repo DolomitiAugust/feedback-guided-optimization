@@ -35,7 +35,7 @@ All numerical plots use saved data. Packing plots preserve saved centers, radii,
 
 ## Analysis and limitations
 
-The policy gain is five corrected answers on a **development-validation** set: its scoring protocol was revised after inspecting responses. This is not a held-out general-reasoning benchmark. Different sampled rollout batches cannot substitute for matched validation. One seed, one narrow task, and no hyperparameter ablation limit causal and statistical conclusions. No complete PPO optimizer/resume checkpoint is supplied.
+The policy gain is five corrected answers on a **development-validation** set: its scoring protocol was revised after inspecting responses. This is not a held-out general-reasoning benchmark. Different sampled rollout batches cannot substitute for matched validation. One seed, one narrow task, and no hyperparameter ablation limit causal and statistical conclusions. No complete PPO optimizer/resume checkpoint is supplied. The saved Critic adapters also omit the underlying initialized value-head weight, so they cannot independently restore the full trained value function. This does not affect the verified Actor reload or its paired evaluation.
 
 The short online search was stopped manually. Later observed generations did not beat the initialization winner; convergence and global optimality are not established. The small online/local numerical difference has not been isolated. The two scores remain separate throughout the data and reports.
 

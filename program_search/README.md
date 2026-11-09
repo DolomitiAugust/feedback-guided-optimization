@@ -31,10 +31,16 @@ Plotting reads committed data only and writes vector PDFs and PNGs under `figure
 ## Files
 
 - `solve.py`: selected exported candidate; its inherited initial-candidate docstring is retained.
-- `config.yaml`: portable copy of the historical platform configuration; provider credentials are blank. It requires a compatible LLM4AD Next service and is not a standalone runner.
+- `config.yaml`: sanitized historical configuration template; provider credentials are blank. It is not directly runnable from this repository. In particular, `version_control.local_path` preserves the original `circle_packing/algorithm` layout, which is not present here.
 - `upstream/`: official initial constructor, original evaluator and BSD 3-Clause license with source commit recorded in `PROVENANCE.md`.
 - `evidence/online_evaluations.csv`: the five valid online events, with the original full-precision scores.
 - `evidence/best_local_packing.json`: saved geometry of the independent local best-program execution.
 - `evidence/local_packing.json`: saved geometry of the local initial constructor.
 
 The online service did not export original geometry for the winning score. The displayed best-program geometry therefore belongs to the separate local re-execution. Source attribution is preserved; upstream code is not presented as original research.
+
+## Reconstructing an online workspace
+
+For a new online experiment, first obtain the complete `examples/applications/alphaevolve_math_benchmark` example from upstream revision `dfde353e753e9021fffe88b5b034bf0c84d90b60`, together with a compatible LLM4AD Next installation and a configured model provider. Preserve its supporting files and the `circle_packing/algorithm/solve.py` working-tree layout. Start with the upstream initial constructor; using this repository's selected winner as the starting point would define a different experiment.
+
+Adapt a separate copy of the historical template to that workspace: set `evaluator.module` to the actual evaluator path (this publication uses `upstream/evaluator.py:CirclePackingEvaluator`) and resolve `version_control.local_path` relative to the chosen working directory. The complete upstream example, framework and provider settings are not included in this small offline reproduction package. Restoring them does not guarantee the hosted service's original behavior or numerical score.
